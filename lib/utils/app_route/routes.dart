@@ -1,7 +1,6 @@
 import 'package:ecommerce/utils/app_route/route_name.dart';
 import 'package:ecommerce/view/home_screeen.dart';
 import 'package:ecommerce/view/login_screen.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import '../../view/splash_screen.dart';

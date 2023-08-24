@@ -14,18 +14,24 @@ class LoginScreen extends StatefulWidget {
 enum Language { english, spanish }
 
 class _LoginScreenState extends State<LoginScreen> {
-  Language? selectedMenu;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        title: Text(AppLocalizations.of(context)!.signin),
+        // title: Text(AppLocalizations.of(context)!.signin),
         actions: [
           Consumer<LanguageChangeViewModel>(
             builder: (context, value, child) => PopupMenuButton(
-                initialValue: selectedMenu,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Text(Localizations.localeOf(context).toString() == "en"
+                        ? "English"
+                        : "Spanish"),
+                    const Icon(Icons.arrow_drop_down)
+                  ],
+                ),
                 onSelected: (Language item) {
                   if (Language.english.name == item.name) {
                     value.changeLanguage(const Locale('en'));
@@ -42,9 +48,12 @@ class _LoginScreenState extends State<LoginScreen> {
           )
         ],
       ),
-      body: Center(
-        child: Text(AppLocalizations.of(context)!.signin),
-      ),
+      body: SafeArea(
+          child: Container(
+        child: Column(
+          children: [Text(AppLocalizations.of(context)!.signin)],
+        ),
+      )),
     );
   }
 }

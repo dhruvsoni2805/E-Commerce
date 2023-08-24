@@ -1,6 +1,7 @@
 import 'package:ecommerce/utils/app_route/route_name.dart';
 import 'package:ecommerce/view/home_screeen.dart';
 import 'package:ecommerce/view/login_screen.dart';
+import 'package:ecommerce/view/welcome_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../../view/splash_screen.dart';
@@ -11,6 +12,10 @@ class Routes {
       case RouteName.splashscreen:
         return MaterialPageRoute(
           builder: (context) => const SplashScreen(),
+        );
+      case RouteName.welcomescreen:
+        return MaterialPageRoute(
+          builder: (context) => const WelcomeScreen(),
         );
       case RouteName.loginscreen:
         return MaterialPageRoute(

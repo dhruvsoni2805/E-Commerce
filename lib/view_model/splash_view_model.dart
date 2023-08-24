@@ -5,7 +5,7 @@ import 'dart:async';
 class SplashScreenViewModel with ChangeNotifier {
   void checkauthenticate(context) {
     Future.delayed(const Duration(seconds: 3)).then((value) {
-      Navigator.pushReplacementNamed(context, RouteName.loginscreen);
+      Navigator.pushReplacementNamed(context, RouteName.welcomescreen);
       // notifyListeners();
     });
   }
